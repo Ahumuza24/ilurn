@@ -1,0 +1,18 @@
+{
+  "name": "ilurn",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix ilurn-client run dev",
+    "dev:api": "ILURN_DATABASE_URL=sqlite:///ilurn-api/ilurn.sqlite .venv/bin/python -m uvicorn app.main:app --app-dir ilurn-api --host 127.0.0.1 --port 8000 --reload --reload-dir ilurn-api/app",
+    "build": "npm --prefix ilurn-client run build",
+    "start": "ILURN_DATABASE_URL=sqlite:///ilurn-api/ilurn.sqlite .venv/bin/python -m uvicorn app.main:app --app-dir ilurn-api --host 0.0.0.0 --port 8000",
+    "preview": "npm --prefix ilurn-client run preview",
+    "clean": "rm -rf ilurn-client/dist",
+    "lint": "npm --prefix ilurn-client run lint",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "npm --prefix ilurn-client run test",
+    "test:backend": "cd ilurn-api && ../.venv/bin/python -m pytest -v"
+  }
+}

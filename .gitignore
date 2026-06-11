@@ -1,0 +1,22 @@
+node_modules/
+.npm-cache/
+.venv/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+*.sqlite
+*.sqlite-*
+.agents/
+.claude/
+skills-lock.json
+
+# Generated/local artifacts that should not be committed
+ilurn-client/components/
+ilurn-client/lib/
+ilurn-api/ilurn-client/

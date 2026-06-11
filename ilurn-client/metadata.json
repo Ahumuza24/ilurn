@@ -1,0 +1,6 @@
+{
+  "name": "iLurn",
+  "description": "Phase 1 learning assessment app with a React frontend and FastAPI backend.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

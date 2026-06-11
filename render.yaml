@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ilurn
+    runtime: python
+    plan: free
+    buildCommand: ./scripts/render-build.sh
+    startCommand: ./scripts/render-start.sh
+    healthCheckPath: /health
+    envVars:
+      - key: ILURN_DATABASE_URL
+        fromDatabase:
+          name: ilurn-db
+          property: connectionString
+      - key: ILURN_ADMIN_SIGNUP_CODE
+        sync: false
+      - key: ILURN_EMAIL_HASH_SALT
+        generateValue: true
+      - key: ILURN_COOKIE_SECURE
+        value: "true"
+
+databases:
+  - name: ilurn-db
+    plan: free
